@@ -4,8 +4,18 @@ module.exports = (Franz) => {
     let directCount = 0;
     let indirectCount = 0;
 
-    this.directCount = parseInt(document.getElementsByClassName('unread-notifications badge-count')[0].innerText);
-    
+    badges = document.getElementsByClassName('unread badge-count');
+
+    if (badges.length == 0) {
+      directCount = 0;
+      indirectCount = 0;
+    }
+    else {
+      for (let i = 0; i < badges.length; i ++) {
+        directCount += parseInt(badges[i].innerText);
+      }
+    }
+
     Franz.setBadge(directCount, indirectCount);
     
   };
