@@ -7,7 +7,7 @@
   "author": "Julian Joseph <Julian88Tex@gmail.com>",
   "license": "MIT",
   "config": {
-    "serviceURL": "https://quip.com",
+    "serviceURL": "https://quip.com/account/login",
     "hasNotificationSound": true,
     "hasIndirectMessages": true,
     "dissablewebsecurity": true
