@@ -5,14 +5,21 @@ module.exports = (Franz) => {
     let indirectCount = 0;
 
     badges = document.getElementsByClassName('unread badge-count');
+    notifications = document.getElementsByClassName('unseen-notifications badge-count');
 
     if (badges.length == 0) {
-      directCount = 0;
-      indirectCount = 0;
     }
     else {
       for (let i = 0; i < badges.length; i ++) {
         directCount += parseInt(badges[i].innerText);
+      }
+    }
+
+    if (notifications.length == 0) {
+    }
+    else {
+      for (let i = 0; i < notifications.length; i ++) {
+        directCount += parseInt(notifications[i].innerText);
       }
     }
 
