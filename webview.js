@@ -2,11 +2,14 @@ module.exports = (Franz) => {
   const getMessages = function getMessages() {
     
     let directCount = 0;
-    let indirectCount = 0;
 
+    // searches for class which signifies unread badges (excluding notifications)
     badges = document.getElementsByClassName('unread badge-count');
+
+    // searches for class which signifies unread notifications
     notifications = document.getElementsByClassName('unseen-notifications badge-count');
 
+    //counts badges (excluding notifications)
     if (badges.length == 0) {
     }
     else {
@@ -14,7 +17,8 @@ module.exports = (Franz) => {
         directCount += parseInt(badges[i].innerText);
       }
     }
-
+    
+    // counts notifications
     if (notifications.length == 0) {
     }
     else {
@@ -23,7 +27,8 @@ module.exports = (Franz) => {
       }
     }
 
-    Franz.setBadge(directCount, indirectCount);
+    //sends notification/badge total to Franz
+    Franz.setBadge(directCount);
     
   };
 
