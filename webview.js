@@ -4,7 +4,7 @@ module.exports = (Franz) => {
     let directCount = 0;
     let indirectCount = 0;
 
-    this.directCount = document.getElementsByClassName('unread-notifications badge-count')[0].innerText
+    this.directCount = parseInt(document.getElementsByClassName('unread-notifications badge-count')[0].innerText);
     
     Franz.setBadge(directCount, indirectCount);
     
